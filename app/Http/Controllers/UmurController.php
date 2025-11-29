@@ -20,9 +20,14 @@ class UmurController extends Controller
     {
         $request->validate([
             'nama' => ['required', 'string', 'min:3', 'max:30'],
-            'umur' => ['required', 'integer', 'min:1', 'max:99']
+            'umur' => ['required', 'integer', 'min:1', 'max:99'] //20
         ]);
 
+        // session agar data umur bisa diperiksa oleh middleware.
+
+        $request->session()->put('age', $request->umur);
+        
+        return redirect()->route('umur.success');
 
     }
 }

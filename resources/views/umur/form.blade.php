@@ -29,6 +29,12 @@
                     </div>
                 @endif
 
+                @if (session('fail'))
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>yah Errorr!</strong> {{ session('fail') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
 
 
                 <form action="{{ route('umur.proses') }}" method="post">

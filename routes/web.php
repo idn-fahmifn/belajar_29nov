@@ -90,7 +90,7 @@ Route::prefix('umur')->group(function(){
     ->name('umur.form');
 
     Route::get('success', [UmurController::class, 'success'])
-    ->name('umur.success');
+    ->middleware('umur')->name('umur.success');
 
     // Route prosess
     Route::post('proses', [UmurController::class, 'proses'])->name('umur.proses');
