@@ -98,6 +98,13 @@ Route::prefix('umur')->group(function(){
 });
 
 
+Route::view('tampilan', 'template');
+
+Route::get('about', function(){
+    return view('about');
+});
+
+
 
 
 
