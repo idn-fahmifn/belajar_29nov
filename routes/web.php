@@ -92,6 +92,9 @@ Route::prefix('umur')->group(function(){
     Route::get('success', [UmurController::class, 'success'])
     ->name('umur.success');
 
+    // Route prosess
+    Route::post('proses', [UmurController::class, 'proses'])->name('umur.proses');
+
 });
 
 

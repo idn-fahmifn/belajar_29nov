@@ -14,4 +14,15 @@ class UmurController extends Controller
     {
         return view('umur.success');
     }
+
+    // proses untuk mengambil dan redirect ke halam sukses
+    public function proses(Request $request)
+    {
+        $request->validate([
+            'nama' => ['required', 'string', 'min:3', 'max:30'],
+            'umur' => ['required', 'integer', 'min:1', 'max:99']
+        ]);
+
+
+    }
 }
