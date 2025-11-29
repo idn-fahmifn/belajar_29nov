@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HalamanController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,28 +12,12 @@ Route::get('/', function () {
 // view = menampilkan langsung halaman tanpa ada function
 // resource = operasi CRUD
 
-Route::get('profile', function(){
-
-    // case jika data banyak
-    $divisi_IT = 40;
-    $divisi_umum = 50;
-    $total_karyawan = $divisi_IT + $divisi_umum;
-
-    return view('halaman.profile',[
-        'nama' => 'Fahmi',
-        'jabatan' => 'Kepala IT',
-        'total' => $total_karyawan
-    ]);
+Route::get('profile', [HalamanController::class, 'profile'])
+->name('halaman.profile'); //hanya nama
 
 
-})->name('halaman.profile'); //hanya nama
-
-
-Route::get('home', function(){
-
-    return view('halaman.home'); //memanggil halaman
-    
-})->name('halaman.home'); //hanya nama
+Route::get('home', [HalamanController::class, 'home'])
+->name('halaman.home'); //hanya nama
 
 
 // Route dengan Parameter
