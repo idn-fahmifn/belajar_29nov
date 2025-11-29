@@ -11,7 +11,7 @@ class BarangController extends Controller
      */
     public function index()
     {
-        return "Halaman index barang";
+        return view('barang.index');
     }
     
     public function report()
@@ -39,9 +39,9 @@ class BarangController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($param)
     {
-        return "Halaman show barang";
+        return "Halaman show barang ".$param;
     }
 
     /**
