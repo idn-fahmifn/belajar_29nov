@@ -10,4 +10,8 @@ class UmurController extends Controller
     {
         return view('umur.form');
     }
+    public function success()
+    {
+        return view('umur.success');
+    }
 }

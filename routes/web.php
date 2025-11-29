@@ -89,6 +89,9 @@ Route::prefix('umur')->group(function(){
     Route::get('form', [UmurController::class, 'form'])
     ->name('umur.form');
 
+    Route::get('success', [UmurController::class, 'success'])
+    ->name('umur.success');
+
 });
 
 

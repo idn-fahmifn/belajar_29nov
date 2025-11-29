@@ -24,6 +24,9 @@
                         <label for="">Umur</label>
                         <input type="number" name="umur" class="form-control mt-2">
                     </div>
+                    <div class="form-group mt-4">
+                        <button type="submit" class="btn btn-success">Masuk</button>
+                    </div>
                 </form>
 
             </div>
