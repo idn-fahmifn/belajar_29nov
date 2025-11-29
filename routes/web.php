@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\HalamanController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,6 +48,7 @@ Route::prefix('training')->group(function () {
     Route::get('mtcine', function () {
         return "Ini adalah kelas mtcine";
     });
+    
     Route::prefix('programming')->group(function () {
         Route::get('laravel', function () {
             return "Ini adalah kelas laravel";
@@ -54,6 +56,11 @@ Route::prefix('training')->group(function () {
     });
 });
 
+
+// Routing dengan resource 
+Route::resource('barang', BarangController::class);
+Route::get('barang-report', [BarangController::class, 'report'])
+->name('barang.report');
 
 
 
