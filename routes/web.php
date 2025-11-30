@@ -89,8 +89,7 @@ Route::prefix('umur')->group(function(){
     Route::get('form', [UmurController::class, 'form'])
     ->name('umur.form');
 
-    Route::get('success', [UmurController::class, 'success'])
-    ->middleware('umur')->name('umur.success');
+    Route::middleware(['umur'])->get('success', [UmurController::class, 'success'])->name('umur.success');
 
     // Route prosess
     Route::post('proses', [UmurController::class, 'proses'])->name('umur.proses');
@@ -103,14 +102,4 @@ Route::view('tampilan', 'template');
 Route::get('about', function(){
     return view('about');
 });
-
-
-
-
-
-
-
-
-
-
 
