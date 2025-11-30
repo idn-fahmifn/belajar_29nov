@@ -43,7 +43,8 @@ class BarangController extends Controller
      */
     public function show($param)
     {
-        return "Halaman show barang ".$param;
+        $data = Barang::findOrFail($param);
+        return view('barang.show', compact('data'));
     }
 
     /**
